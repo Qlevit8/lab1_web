@@ -4,36 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fb18e86-ff80-4373-959b-6b836f230a2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/WebLab.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/api/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/api/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/api/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/api/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/profile.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/redoc.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_in.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_up.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/api/api.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/images/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/images/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/images/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/images/user.png" afterDir="false" />
-    </list>
+    <list default="true" id="3fb18e86-ff80-4373-959b-6b836f230a2e" name="Changes" comment="Lab 1 final" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -133,6 +104,19 @@
       <option name="presentableId" value="Default" />
       <updated>1710180291324</updated>
     </task>
+    <task id="LOCAL-00001" summary="Lab 1 final">
+      <option name="closed" value="true" />
+      <created>1711388365854</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1711388365854</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Lab 1 final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab 1 final" />
   </component>
 </project>
