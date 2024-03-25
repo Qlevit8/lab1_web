@@ -20,7 +20,7 @@ def get_users(request):
 
 @api_view(['GET'])
 def search_pets_by_name(request):
-    pet_name = request.GET.get('name', None)
+    pet_name = request.GET.get('pet_name', None)
     if pet_name is not None:
         pets = Pet.objects.filter(pet_name__icontains=pet_name)
         serializer = PetSerializer(pets, many=True)
