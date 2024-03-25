@@ -1,0 +1,55 @@
+{% extends 'pet_shop/base.html' %}
+
+{% block title %}
+Реєстрація
+{% endblock %}
+
+{% block body %}
+<form class="form-signin text-center" method="post">
+    {% csrf_token %}
+    <h1>Реєстрація</h1>
+    <label for="name" class="sr-only">Ім'я</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <div class="col-2">
+          <input type="text" id="name" name="name" class="form-control mb-2" placeholder="Ім'я" required>
+        </div>
+    </div>
+    <label for="surname" class="sr-only">Прізвище</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <div class="col-2">
+          <input type="text" id="surname" name="surname" class="form-control mb-2" placeholder="Прізвище" required>
+        </div>
+    </div>
+    <label for="email" class="sr-only">Електронна адреса</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <div class="col-2">
+          <input type="email" id="email" name="email" class="form-control mb-2" placeholder="Електронна адреса" required autofocus>
+        </div>
+    </div>
+    <label for="password" class="sr-only">Пароль</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <div class="col-2">
+          <input type="password" id="password" name="password" class="form-control mb-2" placeholder="Пароль" required>
+        </div>
+    </div>
+    <label for="gender" class="sr-only">Стать</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <select id="gender" name="gender">
+          <option value="male">Чоловік</option>
+          <option value="female">Жінка</option>
+        </select>
+    </div>
+    <label for="date_of_birth" class="sr-only">Дата народження</label>
+    <div class="input-group mb-2 d-flex justify-content-center">
+        <div class="col-2">
+          <input type="date" id="date_of_birth" name="date_of_birth" class="form-control mb-2" placeholder="Дата народження" required>
+        </div>
+    </div>
+    <div class="checkbox mb-3">
+        <label>
+          <input type="checkbox" id="remember_me" name="remember_me" value="remember_me"> Запам'ятати мене
+        </label>
+    </div>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Реєстрація</button>
+</form>
+{% endblock %}

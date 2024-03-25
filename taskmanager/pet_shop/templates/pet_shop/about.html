@@ -1,0 +1,23 @@
+{% extends 'pet_shop/base.html' %}
+{% load static %}
+
+{% block title %}
+Про додаток
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1>Про додаток</h1>
+    <p>Додаток дозволяє побачити які тварини зараз доступні в магазині, скільки вони коштують, їх вагу та вік. Є можливість зареєструвати аккаунт, ввійти на сайт за домогою створеного акаунта або переглянути інформацію про аккаунт в "Профіль".</p>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <img class="icon mx-auto my-custom-margin" src="{% static 'images/logo.png' %}" width="200">
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

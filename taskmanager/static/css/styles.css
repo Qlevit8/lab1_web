@@ -1,0 +1,49 @@
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+        .site-header {
+            background-color: #343a40;
+            color: #fff;
+        }
+        .site-header a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .site-header a:hover {
+            color: #f8f9fa;
+        }
+        .site-header .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .site-header .nav-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            padding: 10px;
+        }
+        .site-header .nav-links a {
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .site-header .nav-links a:hover {
+            background-color: #f8f9fa;
+            color: #343a40;
+        }
+
+        .my-custom-margin {
+            margin-top: 100px;
+            margin-bottom: 50px;
+        }

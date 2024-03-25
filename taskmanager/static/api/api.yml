@@ -1,0 +1,166 @@
+openapi: 3.0.1
+info:
+  version: 1.0.0
+  title: "Магазин тварин [Лабораторна 1]"
+
+paths:
+  api/add_pet:
+    tags: ["Pet"]
+    post:
+      summary: "Додати тварину"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                pet_name:
+                  type: string
+                  required: true
+                pet_age:
+                  type: integer
+                  required: true
+                pet_sex:
+                  type: string
+                  required: true
+                pet_weight:
+                  type: float
+                  example: 0
+                  required: true
+                pet_species:
+                  type: integer
+                  required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                properties:
+                  pet:
+                    type: object
+                    properties:
+                      pet_name:
+                        type: string
+                        example: "Dog"
+                      pet_age:
+                        type: integer
+                        example: 11
+                      pet_sex:
+                        type: string
+                        example: "Чоловіча"
+                      pet_weight:
+                        type: float
+                        example: 11.5
+                      pet_species:
+                        type: integer
+                        example: 1
+        400:
+          description: "Неправильно введені дані"
+  api/search_pet:
+    tags: [ "Pet" ]
+    get:
+      summary: "Знайти тварину по імені"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                pet_name:
+                  type: string
+                  required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                properties:
+                  data:
+                    type: object
+                    properties:
+                      pet:
+                        type: object
+                        properties:
+                          pet_name:
+                            type: string
+                            example: "Dog"
+                          pet_age:
+                            type: integer
+                            example: 11
+                          pet_sex:
+                            type: string
+                            example: "Чоловіча"
+                          pet_weight:
+                            type: float
+                            example: 11.5
+                          pet_species:
+                            type: integer
+                            example: 1
+        400:
+          description: "Неправильно вказане ім'я"
+  api/search_user:
+    tags: [ "User" ]
+    get:
+      summary: "Знайти користувача по ID"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              properties:
+                user_id:
+                  type: integer
+                  required: true
+      responses:
+        200:
+          content:
+            application/json:
+              schema:
+                properties:
+                  id:
+                    type: integer
+                    example: 1
+                  password:
+                    type: string
+                    example: "ddsasddas21r3dasf"
+                  email:
+                    type: string
+                    example: "adas@email.com"
+                  name:
+                    type: string
+                    example: "John Doe"
+                  surname:
+                    type: string
+                    example: "John Doe"
+                  date_of_birth:
+                    type: string
+                    example: "2024-03-12"
+                  gender:
+                    type: string
+                    example: "Чоловік"
+                  is_active:
+                    type: boolean
+                    example: true
+                  is_superuser:
+                    type: boolean
+                    example: true
+                  is_staff:
+                    type: boolean
+                    example: true
+                  date_joined:
+                    type: string
+                    format: date-time
+                    example: "2024-03-15T04:27:04+02:00"
+                  last_login:
+                    type: string
+                    format: date-time
+                    example: "2024-03-15T20:50:01.487700+02:00"
+                  groups:
+                    type: array
+                    items: { }
+                    example: [ ]
+                  user_permissions:
+                    type: array
+                    items: { }
+                    example: [ ]
+        400:
+          description: "Неправильне ID"
+
+
