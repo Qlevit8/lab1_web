@@ -8,7 +8,14 @@ from .models import User
 
 def index(request):
     pets = Pet.objects.order_by('pet_species__species_name')
-    return render(request, 'pet_shop/index.html', {'pets': pets})
+    if request.user.is_authenticated:
+        name = request.user.name
+        surname = request.user.surname
+    else:
+        name = "Unknown"
+        surname = "User"
+    return render(request, 'pet_shop/index.html',
+                  {'pets': pets, 'name': name, 'surname': surname})
 
 
 def sign_up2(request):
@@ -88,3 +95,10 @@ def profile(request):
         return render(request, 'pet_shop/profile.html',
                       {'name': 'Name', 'surname': 'surname', 'mail': "hi@gmail.com", 'sex': 'male',
                        'date_of_birth': '02.03.2000'})
+
+
+def active_users(request):
+    if request.user.is_superuser:
+        return render(request, 'pet_shop/active-users.html', context={"text": "Notify"})
+    else:
+        return index(request)

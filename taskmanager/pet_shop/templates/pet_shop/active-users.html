@@ -1,0 +1,47 @@
+{% extends 'pet_shop/base.html' %}
+
+{% block title %}
+Активні користувачі
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <table id="active-users-table" class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Channel name</th>
+            </tr>
+        </thead>
+        <tbody id="active-users-body">
+        </tbody>
+    </table>
+</div>
+    <script>
+        const socket = new WebSocket(
+            'ws://'
+            + window.location.host
+            + '/ws/notification/'
+        );
+
+        socket.onmessage = function(event) {
+            const data = JSON.parse(event.data);
+            if (data.type === 'active_users') {
+                const users = data.users;
+                const tbody = document.getElementById('active-users-body');
+                tbody.innerHTML = '';
+
+                users.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.name}</td>
+                        <td>${user.email}</td>
+                        <td>${user.channel_name}</td>
+                    `;
+                    tbody.appendChild(row);
+                });
+            }
+        };
+    </script>
+{% endblock %}

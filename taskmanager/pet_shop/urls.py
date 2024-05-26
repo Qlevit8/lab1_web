@@ -1,9 +1,10 @@
-from django.urls import path
+from django.urls import path, include
 from . import views
 from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', views.index, name='home'),
+    path('active-users', views.active_users, name='active-users'),
     path('about', views.about, name='about'),
     path('sign-in', views.sign_in, name='sign-in'),
     path('sign-up', views.sign_up, name='sign-up'),

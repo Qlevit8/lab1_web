@@ -6,10 +6,13 @@
 
 {% block body %}
 <div class="container">
+        <input type="hidden" id="Name" value="{{ name }}">
+        <input type="hidden" id="Surname" value="{{ surname }}">
         <h1>Доступні тварини</h1>
         <table class="table">
             <thead>
                 <tr>
+                    <th>Номер</th>
                     <th>Ім'я</th>
                     <th>Вік (років)</th>
                     <th>Вид</th>
@@ -20,16 +23,63 @@
             </thead>
             <tbody>
                 {% for pet in pets %}
-                <tr>
-                    <td>{{ pet.pet_name }}</td>
-                    <td>{{ pet.pet_age }}</td>
-                    <td>{{ pet.pet_species.species_name }}</td>
-                    <td>{{ pet.pet_sex }}</td>
-                    <td>{{ pet.pet_weight }}</td>
-                    <td>{{ pet.pet_species.species_price }}</td>
-                </tr>
+                    <tr>
+                        <td>{{forloop.counter}}</td>
+                        <td id="pet-name-{{ forloop.counter }}">{{ pet.pet_name }}</td>
+                        <td>{{ pet.pet_age }}</td>
+                        <td>{{ pet.pet_species.species_name }}</td>
+                        <td>{{ pet.pet_sex }}</td>
+                        <td>{{ pet.pet_weight }}</td>
+                        <td id="pet-price-{{ forloop.counter }}">{{ pet.pet_species.species_price }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+    <div class="row mt-5 justify-content center">
+        <div class="col-4">
+            <div>
+                <label for="pet_id" class="form-label">Номер тварини</label>
+                <input id="pet_id" class="form-control" type="text"><br>
+            </div>
+            <button class="btn btn-primary mt-2" id="button">Поділитися</button>
+        </div>
+        <div class="col-4">
+            <p id="log"></p>
+        </div>
     </div>
+</div>
+
+<script>
+
+    const notificationSocket = new WebSocket(
+        'ws://'
+        + window.location.host
+        + '/ws/notification/'
+    );
+
+    notificationSocket.onmessage = function (e) {
+        const data = JSON.parse(e.data);
+        console.log(data.message);
+        if (data.tag === 'pet_purchase') {
+            document.querySelector('#log').innerHTML += (data.message + '<br>');
+        }
+    };
+
+    notificationSocket.onclose = function (e) {
+        console.error('Chat socket closed unexpectedly');
+    };
+
+    document.querySelector('#button').onclick = function (e) {
+        const name = document.querySelector('#Name');
+        const surname = document.querySelector('#Surname');
+        const pet_id = document.querySelector('#pet_id').value;
+        const pet_name = document.getElementById('pet-name-' + pet_id).innerText;
+        const pet_price = document.getElementById('pet-price-' + pet_id).innerText;
+        const message = `${name.value} ${surname.value} хоче купити тварину з іменем ${pet_name} за ${pet_price} грн.`;
+        notificationSocket.send(JSON.stringify({
+            'message': message
+        }));
+    };
+</script>
 {% endblock %}

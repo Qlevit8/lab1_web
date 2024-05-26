@@ -43,9 +43,11 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'daphne',
     'django.contrib.staticfiles',
     'pet_shop',
-    'rest_framework'
+    'rest_framework',
+    'channels',
 ]
 
 MIDDLEWARE = [
@@ -77,7 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'taskmanager.wsgi.application'
-
+ASGI_APPLICATION = 'taskmanager.asgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -86,6 +88,13 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels_redis.core.RedisChannelLayer',
+        'CONFIG': {'hosts': [('127.0.0.1', 6379)]},
     }
 }
 
@@ -126,8 +135,6 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
-
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
