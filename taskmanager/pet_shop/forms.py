@@ -14,3 +14,9 @@ class SignUp(UserCreationForm):
     class Meta:
         model = User
         fields = ['email', 'name', 'surname', 'password', 'gender', 'date_of_birth']
+
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['email', 'name']

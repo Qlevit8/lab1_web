@@ -6,6 +6,7 @@
 
 {% block body %}
 <div class="container">
+    <h1>Активні користувачі</h1>
     <table id="active-users-table" class="table">
         <thead>
             <tr>
@@ -17,6 +18,18 @@
         <tbody id="active-users-body">
         </tbody>
     </table>
+    <table id="tasks-table" class="table">
+        <thead>
+            <tr>
+                <th>Сповіщення</th>
+            </tr>
+        </thead>
+        <tbody id="tasks-table-body">
+        </tbody>
+    </table>
+</div>
+<div class="col-4">
+     <p id="log"></p>
 </div>
     <script>
         const socket = new WebSocket(
@@ -41,6 +54,15 @@
                     `;
                     tbody.appendChild(row);
                 });
+            }
+            console.log(data.message);
+            if (data.tag === 'task_message') {
+                const table = document.getElementById('tasks-table-body');
+                const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${data.message}</td>
+                    `;
+                table.appendChild(row);
             }
         };
     </script>

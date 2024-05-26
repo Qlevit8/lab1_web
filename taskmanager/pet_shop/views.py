@@ -1,13 +1,26 @@
-from .models import Pet
+from .models import Pet, Species
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, get_user_model
-from .forms import SignUp
+from .forms import SignUp, ContactForm
 from django.contrib.auth import logout
 from .models import User
+from .forms import ContactForm
+from .service import send_email
+
+
+is_swine_active = True
+
+
+def set_swines():
+    global is_swine_active
+    is_swine_active = False
 
 
 def index(request):
-    pets = Pet.objects.order_by('pet_species__species_name')
+    if is_swine_active:
+        pets = Pet.objects.order_by('pet_species__species_name')
+    else:
+        pets = Pet.objects.exclude(pet_species__species_name='Свиня').order_by('pet_species__species_name')
     if request.user.is_authenticated:
         name = request.user.name
         surname = request.user.surname
@@ -102,3 +115,11 @@ def active_users(request):
         return render(request, 'pet_shop/active-users.html', context={"text": "Notify"})
     else:
         return index(request)
+
+
+def contact_view(request):
+    if request.method == "POST":
+        article = request.POST.get('article')
+        message = request.POST.get('message')
+
+    return render(request, 'pet_shop/contact.html')

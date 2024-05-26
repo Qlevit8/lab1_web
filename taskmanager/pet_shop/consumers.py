@@ -1,6 +1,7 @@
 
 from channels.generic.websocket import AsyncWebsocketConsumer
 import json
+from datetime import datetime
 
 active_users = []
 
@@ -66,3 +67,11 @@ class WSConsumer(AsyncWebsocketConsumer):
     async def broadcast_active_users(self, event):
         active_users_list = event['active_users_list']
         await self.send(text_data=json.dumps(active_users_list))
+
+    async def task_message(self, event):
+        message = event['message']
+        today_str = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        await self.send(text_data=json.dumps({
+            'message': today_str + ' ' + message,
+            'tag': 'task_message'
+        }))

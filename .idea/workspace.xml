@@ -4,21 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fb18e86-ff80-4373-959b-6b836f230a2e" name="Changes" comment="Lab1 final">
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/consumers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/routing.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/active-users.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taskmanager/static/js/main.js" afterDir="false" />
+    <list default="true" id="3fb18e86-ff80-4373-959b-6b836f230a2e" name="Changes" comment="Lab2 final">
+      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/service.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/tasks.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/contact.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/taskmanager/taskmanager/celery.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taskmanager/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/profile.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_in.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_in.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_up.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/sign_up.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/consumers.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/consumers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/active-users.html" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/templates/pet_shop/active-users.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taskmanager/pet_shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/pet_shop/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taskmanager/taskmanager/asgi.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/taskmanager/asgi.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmanager/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taskmanager/taskmanager/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/taskmanager/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taskmanager/taskmanager/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/taskmanager/taskmanager/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,26 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Qlevit8&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="c915b642-465d-4b1a-8db4-f359ca52637c" />
+        <option name="url" value="https://github.com/Qlevit8/lab1_web.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -62,7 +79,7 @@
     &quot;Python.manager.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lab2&quot;,
     &quot;last_opened_file_path&quot;: &quot;M:/Projects/WebLab/WebLab/taskmanager/static/js&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
@@ -147,12 +164,21 @@
       <option name="project" value="LOCAL" />
       <updated>1711391744205</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Lab2 final">
+      <option name="closed" value="true" />
+      <created>1716683066868</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716683066868</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Lab 1 final" />
     <MESSAGE value="Lab1 final" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lab1 final" />
+    <MESSAGE value="Lab2 final" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lab2 final" />
   </component>
 </project>
